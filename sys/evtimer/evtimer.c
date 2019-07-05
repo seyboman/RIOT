@@ -31,7 +31,7 @@
 #define ENABLE_DEBUG (0)
 #include "debug.h"
 
-static void evtimer_add_event_to_list(evtimer_t *evtimer, evtimer_event_t *event)
+static void _add_event_to_list(evtimer_t *evtimer, evtimer_event_t *event)
 {
     DEBUG("evtimer: new event offset %" PRIu32 " ms\n", event->offset);
     evtimer_event_t **list = &evtimer->events;
@@ -144,7 +144,7 @@ void evtimer_add(evtimer_t *evtimer, evtimer_event_t *event)
     DEBUG("evtimer_add(): adding event with offset %" PRIu32 "\n", event->offset);
 
     _update_head_offset(evtimer);
-    evtimer_add_event_to_list(evtimer, event);
+    _add_event_to_list(evtimer, event);
     if (evtimer->events == event) {
         _set_timer(&evtimer->timer, event->offset);
     }
