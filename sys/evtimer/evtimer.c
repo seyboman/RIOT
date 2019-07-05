@@ -74,7 +74,9 @@ static void _del_event_from_list(evtimer_t *evtimer, evtimer_event_t *event)
         if (*list == event) {
             /* This is the entry we want to remove */
             *list = (*list)->next;
-            (*list)->offset += event->offset;
+            if (*list) {
+                (*list)->offset += event->offset;
+            }
             break;
         }
         list = &(*list)->next;
