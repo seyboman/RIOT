@@ -70,6 +70,7 @@ static void _del_event_from_list(evtimer_t *evtimer, evtimer_event_t *event)
 {
     evtimer_event_t **list = &evtimer->events;
 
+    /* Find the entry to delete from the list */
     while (*list) {
         if (*list == event) {
             break;
@@ -80,6 +81,10 @@ static void _del_event_from_list(evtimer_t *evtimer, evtimer_event_t *event)
     if (*list) {
         /* This is the entry we want to remove */
         *list = (*list)->next;
+        /* If the deleted entry was _not_ the last one
+         * then update 'offset' of the entry that
+         * followed.
+         */
         if (*list) {
             (*list)->offset += event->offset;
         }
