@@ -361,6 +361,10 @@ void auto_init(void)
     extern void auto_init_adxl345(void);
     auto_init_adxl345();
 #endif
+#ifdef MODULE_AS5047D
+    extern void auto_init_as5047d(void);
+    auto_init_as5047d();
+#endif
 #ifdef MODULE_BMP180
     extern void auto_init_bmp180(void);
     auto_init_bmp180();

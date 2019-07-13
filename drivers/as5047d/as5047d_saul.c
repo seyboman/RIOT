@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 UC Berkeley
+ * Copyright (C) 2019 Florian Seybold
  *
  * This file is subject to the terms and conditions of the GNU Lesser
  * General Public License v2.1. See the file LICENSE in the top level
@@ -35,6 +35,7 @@ static int read_as5047d(const void *dev, phydat_t *res)
 
 static int write_as5047d(const void *dev, phydat_t *data)
 {
+    (void) dev;
     (void) data;
     return 1;
 }

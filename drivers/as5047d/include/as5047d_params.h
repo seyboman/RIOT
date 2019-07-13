@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 UC Berkeley
+ * Copyright (C) 2019 Florian Seybold
  *
  * This file is subject to the terms and conditions of the GNU Lesser
  * General Public License v2.1. See the file LICENSE in the top level
@@ -22,7 +22,6 @@
 #include "board.h"
 #include "as5047d.h"
 #include "saul_reg.h"
-//#include "boards/arduino-zero/arduino_pinmap.h"
 #include "periph/spi.h"
 
 #ifdef __cplusplus
@@ -34,7 +33,7 @@ extern "C" {
 #endif
 
 #ifndef AS5047D_CS
-#define AS5047D_CS   ARDUINO_PIN_A2 //Chip select line on A2 on Mechaduino board.
+#define AS5047D_CS   GPIO_PIN(PB, 9) //Chip select line on A2 on Mechaduino board.
 #endif
 
 #ifndef AS5047D_MODE 

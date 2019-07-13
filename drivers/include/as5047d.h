@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 UC Berkeley
+ * Copyright (C) 2019 Florian Seybold
  *
  * This file is subject to the terms and conditions of the GNU Lesser
  * General Public License v2.1. See the file LICENSE in the top level
@@ -11,7 +11,7 @@
  * @ingroup     drivers_sensors
  * @ingroup     drivers_saul
  *
- * @brief       Rotary sensor as5047d driver
+ * @brief       Rotary encoder as5047d driver
  *
  * This driver provides @ref drivers_saul capabilities.
  * @{
@@ -46,7 +46,7 @@ typedef struct {
   * @brief   Device descriptor for a as5047d device
   */
 typedef struct {
-    as5047d_params_t t;
+    as5047d_params_t p;
 } as5047d_t;
 
 /**
