@@ -43,5 +43,5 @@ static int write_as5047d(const void *dev, phydat_t *data)
 const saul_driver_t as5047d_saul_driver = {
     .read  = read_as5047d,
     .write = write_as5047d,
-    .type  = SAUL_SENSE_COUNT,
+    .type  = SAUL_SENSE_ANGLE,
 };
