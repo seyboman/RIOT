@@ -8,6 +8,7 @@ ifneq (,$(filter newlib_nano,$(USEMODULE)))
     endif
   endif
 endif
+    USE_NEWLIB_NANO = 0
 
 ifneq (,$(filter newlib_gnu_source,$(USEMODULE)))
   CFLAGS += -D_GNU_SOURCE=1
